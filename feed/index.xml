@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>我的运维心得</title>
+	<atom:link href="/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description></description>
+	<lastBuildDate>Mon, 17 May 2021 06:53:09 +0000</lastBuildDate>
+	<language>zh-CN</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.8.2</generator>
+	<item>
+		<title>试用Alibaba Cloud Linux 3.2104 64位</title>
+		<link>/2021/05/17/hello-world/</link>
+					<comments>/2021/05/17/hello-world/#comments</comments>
+		
+		<dc:creator><![CDATA[baogg]]></dc:creator>
+		<pubDate>Mon, 17 May 2021 06:33:27 +0000</pubDate>
+				<category><![CDATA[未分类]]></category>
+		<guid isPermaLink="false">http://8.129.49.203/?p=1</guid>
+
+					<description><![CDATA[最近阿里云发布了最新版本Alibaba Cloud Linux 3.2104系统，正想升级一下ECS的系统，体&#8230; <a class="more-link" href="/2021/05/17/hello-world/">继续阅读<span class="screen-reader-text">试用Alibaba Cloud Linux 3.2104 64位</span></a>]]></description>
+										<content:encoded><![CDATA[
+<p>        最近阿里云发布了最新版本Alibaba Cloud Linux 3.2104系统，正想升级一下ECS的系统，体验一下先。</p>
+
+
+
+<p>      首先将ECS关机并将系统切换成Alibaba Cloud Linux 3.2104 64;一切很快。</p>
+
+
+
+<p>       然后更新一下系统先,dnf update；发现无法更新，报错：Errors during downloading metadata for repository &#8216;extras&#8217;: &#8211; Status code: 404 for http://mirrors.cloud.aliyuncs.com/alinux/3/extras/x86_64/repodata/repomd.xml (IP: 100.100.2.148)； 删除/etc/yum.repos.d/ALinux-Base.repo中的[extras];然后重新运行dnf update成功。</p>
+
+
+
+<p>    之后是安装docker；按照阿里云的教程（https://developer.aliyun.com/article/110806），提示错误 ERROR: Unsupported distribution &#8216;alinux&#8217;。按照docker官方教程（https://docs.docker.com/engine/install/centos/）也无法安装。只好手动修改/etc/yum.repos.d/docker-ce.repo中的变量替换；$basearch => x86_64 ; $releasever => 8 就可以安装docker了。</p>
+
+
+
+<p>     目前不知道是阿里云镜像问题还是该系统不太成熟，建议等一等再用。</p>
+
+
+
+<p></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/2021/05/17/hello-world/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>
