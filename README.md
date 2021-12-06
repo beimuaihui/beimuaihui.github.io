@@ -1,2 +1,2 @@
 # beimuaihui.github.io
-1. blog.xyzim.com 官
+1. blog.xyzim.com 官网
